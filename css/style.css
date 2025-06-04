@@ -1,0 +1,502 @@
+:root {
+  --primary: #f57c00;
+  --bgr: #fffaf7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Urbanist", sans-serif;
+  background-color: var(--bgr);
+  color: #1976d2;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(245, 124, 0, 0.1);
+  border-bottom: 1px solid #f57c00;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-brand {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f57c00;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 1);
+}
+
+.navbar .navbar-brand span {
+  color: #1976d2;
+}
+
+.navbar .navbar-nav a {
+  color: #f57c00;
+  display: inline-block;
+  font-size: 1.4rem;
+  margin: 0 1.4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-blur {
+  background-color: rgba(255, 255, 255, 0.2); /* transparansi putih */
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(12px); /* untuk Safari */
+  border-bottom: 1px solid #f57c00; /* border*/
+  transition: background-color 0.3s ease;
+  z-index: 999;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #9c27b0;
+  display: inline-block;
+}
+
+.navbar .navbar-nav a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: rgba(245, 124, 0, 0.1);
+  transition: left 0.3s ease;
+}
+
+.navbar .navbar-nav a:hover::before {
+  left: 0;
+}
+
+.navbar .navbar-extra a {
+  color: #1976d2;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: #7cbeff;
+}
+
+#hamberger-menu {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url("../assets/images/myart.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fffaf7;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  bottom: 0;
+  background: linear-gradient(0deg, #fffaf7, rgba(255, 255, 255, 0) 100%);
+}
+
+.hero .container.text {
+  text-align: left;
+  max-width: 600px;
+  padding-left: 5%;
+  z-index: 1;
+}
+
+.hero .text-bg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/images/Bgr1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding: 4rem 2rem;
+  color: #fff;
+  text-align: center;
+  width: 500px;
+  height: 400px;
+}
+
+.heading-title {
+  margin: 0;
+  font-family: "Caveat Brush", cursive;
+  font-size: 9rem;
+  line-height: 1;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+}
+
+.heading-name {
+  font-size: 2rem;
+  font-family: "Urbanist", sans-serif;
+  background-color: #ffffff;
+  color: #f57c00;
+  padding: 0.2em 0.6em;
+  border-radius: 0.5rem;
+  display: inline-block;
+  text-shadow: none;
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero .btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #1976d2;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero .btn:hover {
+  background-color: #1565c0; /* sedikit lebih gelap */
+  box-shadow: 0 0 10px #1976d2, 0 0 20px #42a5f5;
+  transform: translateY(-2px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Text box */
+.hero .content .text-box {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(4px);
+  color: #fffaf7;
+  text-shadow: 1px 1px 3px rgba(255, 247, 247, 0.5);
+  box-shadow: #fff;
+}
+
+/* About */
+.about,
+.projects {
+  padding: 7% 7% 1.4rem;
+}
+
+.about h2 {
+  color: white;
+  text-align: center;
+  font-family: "Caveat Brush", cursive;
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+}
+
+.projects h2 {
+  color: #1565c0;
+  text-align: center;
+  font-family: "Caveat Brush", cursive;
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1.5rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+
+  line-height: 1.6;
+}
+
+/* Projects */
+.projects h2 {
+  margin-bottom: 1rem;
+}
+
+.projects p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-size: 1.1rem;
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 33.3333%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+/* Carousel */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-inner {
+  transition: transform -10s linear;
+}
+
+/* contact/footer */
+.contact {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 40px;
+}
+
+.contact a {
+  color: #ffd369;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.contact-container p {
+  margin: 10px 0;
+  font-size: 1.4rem;
+}
+
+.bg-footer {
+  position: relative;
+  background-image: url("../assets/images/Layer 159.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  background-color: transparent;
+  min-height: 200px;
+  border-top: 4px solid #f57c00;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.bg-footer .contact-text {
+  color: #f57c00;
+  font-family: "urbanist";
+  position: relative;
+  z-index: 1;
+}
+
+.bg-footer h5 {
+  font-family: "caveat brush", cursive;
+  color: #f57c00;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.bg-footer .invisible-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.bg-footer a svg {
+  stroke: #f57c00;
+  transition: stroke 0.3s ease;
+}
+
+/*warna ikon */
+.icon-email,
+.icon-wa {
+  stroke: #f57c00;
+  width: 20px;
+  height: 20px;
+}
+
+.contact-link {
+  color: #f57c00;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  color: #ffa733;
+  text-decoration: none;
+}
+
+.icon-email:hover,
+.icon-wa:hover {
+  stroke: #ffffff;
+}
+
+.bg-about {
+  background-image: url("../assets/images/re.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 300px;
+  background-color: #f0f8ff;
+}
+
+/* Media Quaries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 60%;
+  }
+
+  #hamberger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fffaf7;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: #000000;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5;
+    font-size: 2rem;
+  }
+  .navbar .navbar-nav a::before {
+    transform-origin: 0 0;
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    height: 50rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .about .row .content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .carousel-item {
+    flex: 0 0 100%;
+  }
+}
+
+/* HP */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+  .contact-container p {
+    font-size: 1.2rem;
+  }
+  .bg-footer {
+    background-position: top center;
+    background-size: contain;
+  }
+}

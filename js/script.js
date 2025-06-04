@@ -1,20 +1,3 @@
-// Toggle class active
-const navbarNav = document.querySelector(".navbar-nav");
-const hamberger = document.querySelector("#hamberger-menu");
-
-// when clicked hamburger menu
-hamberger.addEventListener("click", function (e) {
-  e.preventDefault();
-  navbarNav.classList.toggle("active");
-});
-
-// Klik bebas
-document.addEventListener("click", function (e) {
-  if (!hamberger.contains(e.target) && !navbarNav.contains(e.target)) {
-    navbarNav.classList.remove("active");
-  }
-});
-
 // ===== CAROUSEL SECTION =====
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".carousel-track");
