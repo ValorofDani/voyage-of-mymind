@@ -27,6 +27,8 @@
 <nav class="navbar navbar-expand-lg navbar-light navbar-blur px-4 fixed-top">
   <a class="navbar-brand" href="#">Voyage <span>of MyMind.</span></a>
 
+  
+
   <!-- Tombol Hamburger -->
   <button
     class="navbar-toggler"
@@ -61,8 +63,6 @@
   </div>
 </nav>
 <!-- Navbar End -->
-
-    <!-- Navbar End -->
 
     <!-- Hero Section -->
     <section class="hero d-flex align-items-center" id="home">
@@ -215,10 +215,24 @@
   </script>
 </footer>
 
-
-
     <!-- Bootstrap JS Offline -->
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Atur Navbar supaya menutup saat klik bebas -->
+    <script>
+  document.addEventListener('click', function (event) {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const isOpen = navbarCollapse.classList.contains('show');
+    const clickedInsideNavbar = navbarCollapse.contains(event.target);
+    const clickedToggler = event.target.closest('.navbar-toggler');
+
+    if (isOpen && !clickedInsideNavbar && !clickedToggler) {
+      const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+      bsCollapse.hide();
+    }
+  });
+</script>
+
 
     <!-- Custom JS -->
     <script src="js/script.js"></script>
