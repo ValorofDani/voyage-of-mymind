@@ -100,13 +100,17 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   background-image: url("../assets/images/myart.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
   position: relative;
   color: #fffaf7;
+  text-align: center;
 }
 
 .hero::after {
@@ -135,11 +139,15 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  padding: 4rem 2rem;
+  padding: 2rem;
   color: #fff;
   text-align: center;
-  width: 500px;
-  height: 400px;
+
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  margin-inline: auto;
 }
 
 .heading-title {
@@ -419,84 +427,22 @@ body {
   background-color: #f0f8ff;
 }
 
-/* Media Quaries */
-
-/* Laptop */
-@media (max-width: 1366px) {
-  html {
-    font-size: 70%;
-  }
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-  html {
-    font-size: 60%;
+@media (max-width: 576px) {
+  .hero {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    background-position: top;
   }
 
-  #hamberger-menu {
-    display: inline-block;
+  .hero .heading-title {
+    font-size: 3.5rem;
   }
 
-  .navbar .navbar-nav {
-    position: absolute;
-    top: 100%;
-    right: -100%;
-    background-color: #fffaf7;
-    width: 30rem;
-    height: 100vh;
-    transition: 0.3s;
-  }
-
-  .navbar .navbar-nav.active {
-    right: 0;
-  }
-
-  .navbar .navbar-nav a {
-    color: #000000;
-    display: block;
-    margin: 1.5rem;
-    padding: 0.5;
-    font-size: 2rem;
-  }
-  .navbar .navbar-nav a::before {
-    transform-origin: 0 0;
-  }
-
-  .about .row {
-    flex-wrap: wrap;
-  }
-
-  .about .row .about-img img {
-    height: 50rem;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .about .row .content {
-    padding: 0;
-  }
-
-  .about .row .content h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  .carousel-item {
-    flex: 0 0 100%;
-  }
-}
-
-/* HP */
-@media (max-width: 450px) {
-  html {
-    font-size: 55%;
-  }
-  .contact-container p {
+  .hero .heading-name {
     font-size: 1.2rem;
   }
-  .bg-footer {
-    background-position: top center;
-    background-size: contain;
+
+  .hero .hero-desc {
+    font-size: 0.95rem;
   }
 }
